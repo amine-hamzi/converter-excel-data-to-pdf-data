@@ -1,0 +1,116 @@
+<div  style=""  class="row align-items-center">
+  <h1 class="my-2" style="font-size: 70px;text-align: center" ><b>LONGMA INDUSTRY SARL</b></h1>
+
+  <div class=" my-3 col-sm-4 offset-sm-6 border  border-dark"  style="text-align: center;"  >
+
+    <p><b>{{facture.nomClient}} </b></p>
+    <p>{{facture.addrClient}}</p>
+
+  </div>
+
+
+  <h1 class=" offset-2">Facture</h1>
+
+  <div  class="my-2 col-8 offset-2 ">
+    <table   class="table table-bordered border border-dark " >
+      <tbody>
+      <tr >
+        <td scope="col"><b>NUMERO</b></td>
+        <td scope="col"><b>DATE</b></td>
+        <td scope="col"><b>MODE DE REGLEMENT</b></td>
+        <td scope="col"><b>REFERENCE</b></td>
+      </tr>
+
+      <tr>
+        <td>{{facture.id}}</td>
+        <td>{{facture.date | date:'dd/MM/yyyy'}}</td>
+        <td>{{facture.modePaiement}}</td>
+        <td>{{facture.reference}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div  class="mt-2 mb-3 border  border-dark col-8 offset-2 "  style="height: 500px;padding: 0px">
+    <table style="padding: 0px" class="table table-bordered border-dark border " >
+      <tbody>
+      <tr >
+        <th>Reference</th>
+        <th>Désignation</th>
+        <th>Qté</th>
+        <th>Px unitaire</th>
+        <th>Remise</th>
+        <th>Montat TTC</th>
+        <th>*</th>
+      </tr>
+      <tr valign="top">
+        <td>{{facture.ref}}</td>
+        <td>{{facture.designation}}</td>
+        <td>{{facture.qte | number:'.1-2':'fr'}}</td>
+        <td>{{facture.prixUnitaire | number:'.1-2':'fr'}}</td>
+        <td></td>
+        <td>{{montatTTC | number:'.1-2':'fr'}}</td>
+        <td>V20</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="my-2 col-8 offset-2 " style="" >
+    <table  class="table border table-bordered border-dark " >
+      <tbody>
+      <tr>
+        <th>Port</th>
+        <th>Total HT</th>
+        <th>Escompte</th>
+        <th>Total TTC</th>
+        <th>Acompte</th>
+        <th>Net A Payer</th>
+      </tr>
+      <tr valign="top">
+        <td></td>
+        <td>{{facture.prixHT | number:'.1-2':'fr'}}</td>
+        <td>0,00</td>
+        <td>{{montatTTC | number:'.1-2':'fr'}}</td>
+        <td>0,00</td>
+        <td>{{facture.netAPayer | number:'.1-2':'fr'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="my-2 col-6 offset-3 " >
+    <table class="table border table-bordered border-dark "  >
+      <tbody>
+      <tr >
+        <th>Code</th>
+        <th>Base</th>
+        <th>Taux</th>
+        <th>Montant</th>
+      </tr>
+      <tr valign="top">
+        <td>V20</td>
+        <td>{{facture.prixHT | number:'.1-2':'fr'}}</td>
+        <td>20,00%</td>
+        <td>{{montat | number:'.1-2':'fr'}}</td>
+
+      </tr>
+      <tr>
+        <td colspan="3"><b>Total</b>    {{facture.prixHT | number:'.1-2':'fr'}}</td>
+        <td>{{montat | number:'.1-2':'fr'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+
+  <div class="my-3 class= col-6 offset-3 " >
+    <p style="font-size: small;"><b>Arrêter la présente facture à la somme : {{chainesLettres}} dirhames </b></p>
+  </div>
+
+  <div  class=" my-5 col-sm-12"  >
+    <p style="font-size: xx-small;margin: 0px;padding: 0px;text-align: center" >_______________________________________________________________________________________________________________________________________________________________________________</p>
+    <p style="font-size: xx-small;margin: 0px;padding: 0px;text-align: center" ><b>Siège social : Q.MARBELLA VILLA VISTA UNION COMM-TANGER S.A.R.L au capital 500.000.00 dhs RC:30233 - CNSS 7410822 IF:04923030 - Patente : 57204019 ICE : 000026084000070</b></p>
+  </div>
+</div>
